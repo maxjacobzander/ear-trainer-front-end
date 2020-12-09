@@ -28,3 +28,7 @@ body {
     box-shadow: 5px 10px 8px 10px darkblue;
     position: absolute;
 }
+
+.button {
+    font-weight: bold;
+}
