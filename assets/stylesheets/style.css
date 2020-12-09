@@ -42,3 +42,7 @@ body {
     border: 2px solid;
     border-radius: 8px;
 }
+
+.button:hover {
+    border-width: thick;
+}
