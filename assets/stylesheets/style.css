@@ -21,7 +21,7 @@ body {
 .quiz-box {
     width: 500px;
     max-width: 85%;
-    background-color: crimson;
+    background-color: #7b170f;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 5px 10px 8px 10px darkblue;
