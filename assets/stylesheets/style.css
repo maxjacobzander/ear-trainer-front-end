@@ -29,6 +29,16 @@ body {
     position: absolute;
 }
 
+.answers {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 2rem;
+    margin: 20px 0;
+}
+
 .button {
     font-weight: bold;
+    font-size: larger;
+    border: 2px solid;
+    border-radius: 8px;
 }
