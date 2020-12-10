@@ -34,11 +34,13 @@ body {
     grid-template-columns: auto auto;
     gap: 2rem;
     margin: 20px 0;
+    height: 120px;
 }
 
 .button {
     font-weight: bold;
     font-size: larger;
+    height: 150%;
     border: 2px solid;
     border-radius: 8px;
 }
