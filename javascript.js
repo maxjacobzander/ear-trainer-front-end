@@ -4,6 +4,6 @@ function playInterval() {
     soundButton.addEventListener("click", )
 }
 
-function populateAnswers() {
+function populateAnswers() = {
     
 }
