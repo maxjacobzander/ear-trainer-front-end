@@ -1,6 +1,7 @@
 # Ear Trainer
 
-## Front-End Code
+Front-End Code
+
 (Back-End Code available [here](https://github.com/maxjacobzander/ear-trainer-back-end))
 ## What's Is Ear Trainer?
 
