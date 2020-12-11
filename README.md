@@ -1,5 +1,7 @@
 # Ear Trainer
 
+## Front-End Code
+(Back-End Code available [here](https://github.com/maxjacobzander/ear-trainer-back-end))
 ## What's Is Ear Trainer?
 
 Ear Trainer is a single-page web application with a JavaScript front-end and a Rails API backend that is way for musicians (particularly music students) to work on training their ears to be able to identify musical intervals by sound.
