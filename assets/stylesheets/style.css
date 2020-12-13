@@ -14,10 +14,14 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    max-height: 28rem;
+    max-height: 25rem;
     max-width: 100%;
     filter: drop-shadow(0 0 0.75rem darkblue);
     position: relative;
+}
+
+.score {
+    text-align: right;
 }
 
 .quiz-box {
