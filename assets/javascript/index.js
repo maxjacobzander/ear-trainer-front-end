@@ -26,15 +26,7 @@ function playInterval() {
 
 soundButton.addEventListener('click', playInterval);
 
-function populateAnswers() {
-    
-}
 
-function nextInterval() {
-    console.log("Now we play the next interval and repopulate the answer options")
-}
-
-nextButton.addEventListener('click', nextInterval)
 
 
 function answerInterval() {
