@@ -10,7 +10,7 @@ const option3 = document.getElementById('interval3');
 
 const option4 = document.getElementById('interval4');
 
-const randomizeIntervals, currentInterval
+// const randomizeIntervals, currentInterval
 
 function playInterval() {
     console.log("I'm playing an interval!")
