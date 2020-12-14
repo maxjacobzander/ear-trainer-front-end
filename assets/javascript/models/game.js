@@ -6,24 +6,26 @@ class Game {
     }
 
     renderGame(){
-        const gameHolder = document.getElementById("score-box")
-        let scoreTally = document.createElement(div)
+        const scoreHolder = document.getElementById("score-box")
+        let scoreTally = document.createElement("div")
         scoreTally.score = this.score 
         scoreTally.innerHTML += this.showHTML()
-        gameHolder.appendChild(scoreTally)
+        scoreHolder.appendChild(scoreTally)
 
     }
 
     showHTML(){
         return `
         <h4>Correct Intervals: ${this.score}</h4>`
-        // if selectedAnswer.innerText === this.correctAnswer.innerText
-        // updateScore()
     }
 
     updateScore(){
         this.score++;
     }
 
+
+    // if (selectedAnswer.innerText === this.correctAnswer.innerText){
+    //     updateScore()
+    // }
     
 }

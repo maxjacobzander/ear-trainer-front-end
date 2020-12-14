@@ -10,6 +10,15 @@ class Question {
     }
 
     questions = [];
+
+    renderGame(){
+        const gameHolder = document.getElementById("score-box")
+        let scoreTally = document.createElement("div")
+        scoreTally.score = this.score 
+        scoreTally.innerHTML += this.showHTML()
+        gameHolder.appendChild(scoreTally)
+
+    }
     
     gatherQuestions(){
         debugger
@@ -21,6 +30,14 @@ class Question {
         const option3 = document.getElementById('interval3');
 
         const option4 = document.getElementById('interval4');
+
+        fetch("http://localhost:3000/questions")
+            .then(resp => resp.json)
+            .then((gatheredQuestions) => {
+                 new Question(
+                    option1.innerText = this.answer_1
+                 )
+            })
 
         
     }
@@ -47,12 +64,3 @@ class Question {
 
 let questions = []
 
-fetch("http://localhost:3000/questions")
-            .then(resp => resp.json)
-            .then((gatheredQuestions) => {
-                 new Question(
-
-                 )
-            })
-
-        option1.innerText = this.answer_1
