@@ -1,4 +1,12 @@
-const soundButton = document.getElementById("sound")
+document.addEventListener("DOMContentLoaded", function(){
+    API.addIntervals()
+
+    
+})
+
+const soundButton = document.getElementById("sound");
+
+let sound = document.getElementById("interval");
 
 const nextButton = document.getElementById('next');
 
@@ -13,7 +21,7 @@ const option4 = document.getElementById('interval4');
 // const randomizeIntervals, currentInterval
 
 function playInterval() {
-    console.log("I'm playing an interval!")
+    sound.play();
 }
 
 soundButton.addEventListener('click', playInterval);

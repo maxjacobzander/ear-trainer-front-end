@@ -6,18 +6,21 @@
         <script type="text/javascript" src="assets/javascript/services/API.js"></script>
         <script type="text/javascript" src="assets/javascript/models/game.js"></script>
         <script type="text/javascript" src="assets/javascript/models/question.js"></script>
-        <script type="text/javascript" src="index.js"></script>
 </head>
 <body>
-    <div width=100% class="game-box">
+    <div width=100%>
         <div class="logo-image">
             <img src="/assets/images/Ear Trainer Logo No Background.png">
         </div>
-        <div class="score">
-                <h4>Correct Intervals:</h4>
+        <div id="score-box">
+                
         </div>
         <div class="quiz-box">
-            <div class="button-container"><button id="sound" class="sound-button">Play Interval</button></div>
+            <div class="button-container">
+                <audio id="interval">
+                    <source src="assets/audio/Maj3.mp3" type="audio/mpeg">
+                </audio>
+                <button id="sound" class="sound-button">Play Interval</button></div>
             <br>
             <div class="answers">
                 <button class="button" id="interval1">Interval 1</button>
@@ -34,4 +37,5 @@
 
     
 </body>
+<script type="text/javascript" src="assets/javascript/index.js"></script>
 </html>
