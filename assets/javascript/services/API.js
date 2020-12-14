@@ -5,6 +5,7 @@ class API {
         .then(game => {
             game.forEach(game => {
                 const{id, score} = game
+                new Game(id, score)
             })
         } )
     }

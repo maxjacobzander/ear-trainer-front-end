@@ -7,7 +7,7 @@ class Game {
 
     renderGame(){
         const gameHolder = document.getElementById("score-box")
-        let scoreTally = document.createText
+        let scoreTally = document.createTextNode
         scoreTally.dataset.score = this.score
         scoreTally.score = this.score 
         scoreTally.innerHTML += this.showHTML()
