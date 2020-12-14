@@ -9,7 +9,7 @@ class Question {
         this.game_id = game_id
     }
 
-    let questions = [];
+    questions = [];
     
     gatherQuestions(){
         debugger
@@ -22,26 +22,19 @@ class Question {
 
         const option4 = document.getElementById('interval4');
 
-        fetch("http://localhost:3000/questions")
-            .then(resp => resp.json)
-            .then((gatheredQuestions) => {
-                questions = gatheredQuestions;
-            })
-
-        option1.innerText = this.answer_1
-
+        
     }
 
-    let currentInterval = {};
-    let score = 0;
-    let questionCounter = 0;
-    let remainingInterval = [];
+    currentInterval = {};
+    score = 0;
+    questionCounter = 0;
+    remainingInterval = [];
 
     play(){
    
     }
 
-    const nextButton = document.getElementById('next');
+    nextButton = document.getElementById('next');
 
     // function nextInterval() {
     //     console.log("Now we play the next interval and repopulate the answer options")
@@ -51,3 +44,15 @@ class Question {
     
 
 }
+
+let questions = []
+
+fetch("http://localhost:3000/questions")
+            .then(resp => resp.json)
+            .then((gatheredQuestions) => {
+                 new Question(
+
+                 )
+            })
+
+        option1.innerText = this.answer_1
