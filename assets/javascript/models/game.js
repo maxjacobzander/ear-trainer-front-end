@@ -7,8 +7,7 @@ class Game {
 
     renderGame(){
         const gameHolder = document.getElementById("score-box")
-        let scoreTally = document.createTextNode
-        scoreTally.dataset.score = this.score
+        let scoreTally = document.createElement(div)
         scoreTally.score = this.score 
         scoreTally.innerHTML += this.showHTML()
         gameHolder.appendChild(scoreTally)
@@ -18,5 +17,13 @@ class Game {
     showHTML(){
         return `
         <h4>Correct Intervals: ${this.score}</h4>`
+        // if selectedAnswer.innerText === this.correctAnswer.innerText
+        // updateScore()
     }
+
+    updateScore(){
+        this.score++;
+    }
+
+    
 }
