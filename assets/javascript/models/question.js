@@ -1,3 +1,5 @@
+console.log("Hello world")
+
 class Question {
     constructor(interval, answer_1, answer_2, answer_3, answer_4, correct_answer, game_id){
         this.interval = interval
@@ -10,10 +12,11 @@ class Question {
     }
 
     
-    function nextInterval() {
-        console.log("Now we play the next interval and repopulate the answer options")
-    }
+    // function nextInterval() {
+    //     console.log("Now we play the next interval and repopulate the answer options")
+    // }
     
-    nextButton.addEventListener('click', nextInterval)
+    // nextButton.addEventListener('click', nextInterval)
+    
 
 }
