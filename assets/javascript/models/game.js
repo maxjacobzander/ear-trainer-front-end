@@ -3,4 +3,8 @@ class Game {
         this.id = id
         this.score = score 
     }
+
+    renderGame(){
+        const gameHolder = document.getElementById("game-box")
+    }
 }
