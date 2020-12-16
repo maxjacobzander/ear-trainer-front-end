@@ -1,5 +1,6 @@
 class Question {
-    constructor(interval, answer_1, answer_2, answer_3, answer_4, correct_answer, game_id){
+    constructor(id, interval, answer_1, answer_2, answer_3, answer_4, correct_answer, game_id){
+        this.id = id
         this.interval = interval
         this.answer_1 = answer_1
         this.answer_2 = answer_2
@@ -7,37 +8,51 @@ class Question {
         this.answer_4 = answer_4
         this.correct_answer = correct_answer
         this.game_id = game_id
+        this.renderGame()
     }
 
-    questions = [];
 
     renderGame(){
-        const gameHolder = document.getElementById("score-box")
-        let scoreTally = document.createElement("div")
-        scoreTally.score = this.score 
-        scoreTally.innerHTML += this.showHTML()
-        gameHolder.appendChild(scoreTally)
+        const gameHolder = document.getElementById("quiz-box")
+        let actualGame = document.createElement("div")
+        debugger
+        actualGame.innerHTML += this.showHTML()
+        gameHolder.appendChild(actualGame)
 
+    }
+
+    showHTML(){
+        return `
+        <div class="button-container">
+        <audio id="interval">
+            <source src="assets/audio/Maj6.mp3" type="audio/mpeg">
+        </audio>
+        <button id="sound" class="sound-button">Play Interval</button></div>
+    <br>
+    <div class="answers">
+        <button class="button" id="interval1">${this.answer_1}</button>
+        <button class="button" id="interval2">${this.answer_2}</button>
+        <button class="button" id="interval3">${this.answer_3}</button>
+        <button class="button" id="interval4">${this.answer_4}</button>
+        <br><br>
+    </div>
+    <div class="button-container">
+        <button id="next" class="next-button-hide">Next</button>
+    </div>
+        `
     }
     
     gatherQuestions(){
         debugger
-
-        const option1 = document.getElementById('interval1');
-
-        const option2 = document.getElementById('interval2');
-
-        const option3 = document.getElementById('interval3');
-
-        const option4 = document.getElementById('interval4');
-
         fetch("http://localhost:3000/questions")
-            .then(resp => resp.json)
-            .then((gatheredQuestions) => {
-                 new Question(
-                    option1.innerText = this.answer_1
-                 )
-            })
+            .then(resp => resp.json())
+            .then(questions => {
+                questions.foreach(question => {
+                    const {id, interval, answer_1, answer_2, answer_3, answer_4, correct_answer, game_id} = question
+                    new Question(id, interval, answer_1, answer_2, answer_3, answer_4, correct_answer, game_id)
+                })
+            }
+            )
 
         
     }
@@ -61,6 +76,4 @@ class Question {
     
 
 }
-
-let questions = []
 

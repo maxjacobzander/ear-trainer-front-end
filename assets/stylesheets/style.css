@@ -24,7 +24,7 @@ body {
     text-align: right;
 }
 
-.quiz-box {
+#quiz-box {
     width: 500px;
     max-width: 85%;
     background-color: #7b170f;

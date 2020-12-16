@@ -1,5 +1,5 @@
 class API {
-    static addIntervals (){
+    static addIntervals(){
         fetch("http://localhost:3000/games")
         .then(resp => resp.json())
         .then(game => {
@@ -9,4 +9,30 @@ class API {
             })
         } )
     }
+
+
+
+// soundButton = document.getElementById("sound");
+
+// sound = document.getElementById("interval");
+
+
+static playInterval() {
+    document.getElementById("interval").play();
+}
+
+// soundButton.addEventListener('click', playInterval);
+
+
+
+
+answerInterval() {
+    
+}
+
+newGame() {
+    counter = 0,
+    randomizeIntervals = intervals.sort(() => Math.random() - .5)
+    currentInterval = 0
+}
 }

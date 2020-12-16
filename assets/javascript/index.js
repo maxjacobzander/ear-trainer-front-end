@@ -1,27 +1,4 @@
 document.addEventListener("DOMContentLoaded", function(){
     API.addIntervals()
+    document.getElementById("sound").addEventListener("click", API.playInterval)
 })
-
-const soundButton = document.getElementById("sound");
-
-let sound = document.getElementById("interval");
-
-
-function playInterval() {
-    sound.play();
-}
-
-soundButton.addEventListener('click', playInterval);
-
-
-
-
-function answerInterval() {
-    
-}
-
-function newGame() {
-    counter = 0,
-    randomizeIntervals = intervals.sort(() => Math.random() - .5)
-    currentInterval = 0
-}
