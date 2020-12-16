@@ -10,6 +10,19 @@ class API {
         } )
     }
 
+    static gatherQuestions(){
+        fetch("http://localhost:3000/questions")
+            .then(resp => resp.json())
+            .then(questions => {
+                questions.forEach(question => {
+                    const {id, interval, answer_1, answer_2, answer_3, answer_4, correct_answer, game_id} = question
+                    new Question(id, interval, answer_1, answer_2, answer_3, answer_4, correct_answer, game_id)
+                })
+            }
+            )
+    }
+
+
 
 
 // soundButton = document.getElementById("sound");

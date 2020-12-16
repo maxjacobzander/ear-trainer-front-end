@@ -1,0 +1,19 @@
+<div class="button-container">
+
+
+        <div class="button-container">
+        <audio id="interval">
+            <source src="${this.interval}" type="audio/mpeg">
+        </audio>
+        <button class="sound-button${this.id}">Play Interval</button></div>
+    <br>
+    <div class="answers">
+        <button class="button" id="interval1">${this.answer_1}</button>
+        <button class="button" id="interval2">${this.answer_2}</button>
+        <button class="button" id="interval3">${this.answer_3}</button>
+        <button class="button" id="interval4">${this.answer_4}</button>
+        <br><br>
+    </div>
+    <div class="button-container">
+        <button id="next" class="next-button-hide">Next</button>
+    </div>
