@@ -11,14 +11,19 @@ class Question {
         this.renderGame()
     }
 
+    // mixedUpQuestions
 
     renderGame(){
         const gameHolder = document.getElementById("quiz-box")
         let actualGame = document.createElement("div")
         // actualGame.classList.add("test-box")
+        actualGame.dataset.id = this.id
         actualGame.innerHTML += this.showHTML()
         gameHolder.appendChild(actualGame)
-        document.querySelector(`.sound-button${this.id}`).addEventListener("click", API.playInterval)
+        // gameHolder.addEventListener("click", e => {
+        //     if(e.target.className === "sound-button") this.playInterval(e)
+        // })
+        document.querySelector(".sound-button").addEventListener("click", API.playInterval)
 
     }
 
@@ -28,7 +33,7 @@ class Question {
         <audio id="interval">
             <source src="${this.interval}" type="audio/mpeg">
         </audio>
-        <button class="sound-button${this.id}">Play Interval</button></div>
+        <button class="sound-button">Play Interval</button></div>
     <br>
     <div class="answers">
         <button class="button" id="interval1">${this.answer_1}</button>
@@ -42,6 +47,26 @@ class Question {
     </div>
         `
     }
+
+    intervalAudio(){
+        let id = parseInt(dataset.id)
+        fetch(`http://localhost:3000/questions/${id}`)
+            .then(resp => resp.json())
+            .then(questions => {
+                questions.forEach(question => {
+                    const {id, interval, answer_1, answer_2, answer_3, answer_4, correct_answer, game_id} = question
+                    new Question(id, interval, answer_1, answer_2, answer_3, answer_4, correct_answer, game_id)
+                })
+            }
+            )
+    }
+
+    selectAnswer(){
+        
+        document.querySelector
+    }
+
+
     
 
 

@@ -14,7 +14,8 @@ class API {
         fetch("http://localhost:3000/questions")
             .then(resp => resp.json())
             .then(questions => {
-                questions.forEach(question => {
+                let mixedUpQuestions = questions.map((a) => ({sort: Math.random(), value: a})).sort((a, b) => a.sort - b.sort).map((a) => a.value)
+                mixedUpQuestions.forEach(question => {
                     const {id, interval, answer_1, answer_2, answer_3, answer_4, correct_answer, game_id} = question
                     new Question(id, interval, answer_1, answer_2, answer_3, answer_4, correct_answer, game_id)
                 })
@@ -22,17 +23,16 @@ class API {
             )
     }
 
-
+    static playInterval() {
+        // e.target.className.play();
+            document.getElementById(`interval`).play();
+        }
 
 
 // soundButton = document.getElementById("sound");
 
 // sound = document.getElementById("interval");
 
-
-static playInterval() {
-    document.getElementById("interval").play();
-}
 
 // soundButton.addEventListener('click', playInterval);
 

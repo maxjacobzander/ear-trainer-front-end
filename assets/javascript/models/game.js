@@ -5,6 +5,8 @@ class Game {
         this.renderGame()
     }
 
+    // this.question = question ??
+
     renderGame(){
         const scoreHolder = document.getElementById("score-box")
         let scoreTally = document.createElement("div")
