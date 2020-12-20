@@ -25,8 +25,13 @@ class API {
 
     static playInterval() {
         // e.target.className.play();
-            document.getElementById(`interval`).play();
-        }
+        document.getElementById(`interval`).play();
+    }
+
+    static answerInterval() {
+        
+    }
+
 
 
 // soundButton = document.getElementById("sound");
@@ -36,12 +41,6 @@ class API {
 
 // soundButton.addEventListener('click', playInterval);
 
-
-
-
-answerInterval() {
-    
-}
 
 newGame() {
     counter = 0,

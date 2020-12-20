@@ -21,9 +21,10 @@ class Game {
         <h4>Correct Intervals: ${this.score}</h4>`
     }
 
-    updateScore(){
-        this.score++;
-    }
+    // static updateScore(){
+    //     let selectedAnswer = button.innerText
+    //     this.score++;
+    // }
 
 
     // if (selectedAnswer.innerText === this.correctAnswer.innerText){

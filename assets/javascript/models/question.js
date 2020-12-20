@@ -11,8 +11,6 @@ class Question {
         this.renderGame()
     }
 
-    // mixedUpQuestions
-
     renderGame(){
         const gameHolder = document.getElementById("quiz-box")
         let actualGame = document.createElement("div")
@@ -24,6 +22,10 @@ class Question {
         //     if(e.target.className === "sound-button") this.playInterval(e)
         // })
         document.querySelector(".sound-button").addEventListener("click", API.playInterval)
+        document.querySelector("#interval1").addEventListener("click", Game.updateScore)
+        document.querySelector("#interval2").addEventListener("click", Game.updateScore)
+        document.querySelector("#interval3").addEventListener("click", Game.updateScore)
+        document.querySelector("#interval4").addEventListener("click", Game.updateScore)
 
     }
 
@@ -62,7 +64,6 @@ class Question {
     }
 
     selectAnswer(){
-        
         document.querySelector
     }
 
