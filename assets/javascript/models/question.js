@@ -16,7 +16,7 @@ class Question {
         let actualGame = document.createElement("div")
         // actualGame.classList.add("test-box")
         actualGame.dataset.id = this.id
-        actualGame.innerHTML += this.showHTML()
+        actualGame.innerHTML = this.showHTML()
         gameHolder.appendChild(actualGame)
         // gameHolder.addEventListener("click", e => {
         //     if(e.target.className === "sound-button") this.playInterval(e)
@@ -45,7 +45,7 @@ class Question {
         <br><br>
     </div>
     <div class="button-container">
-        <button id="next" class="next-button-hide">Next</button>
+        <button id="next" class="next-button-hide" onClick={this.nextQuestion}>Next</button>
     </div>
         `
     }
