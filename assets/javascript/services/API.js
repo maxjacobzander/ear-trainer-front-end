@@ -11,16 +11,28 @@ class API {
     }
 
     static gatherQuestions(){
+        const activeQuestionId = localStorage.getItem('activeQuestionId')
+        let dispatchedQuestion = false;
         fetch("http://localhost:3000/questions")
             .then(resp => resp.json())
             .then(questions => {
-                let mixedUpQuestions = questions.map((a) => ({sort: Math.random(), value: a})).sort((a, b) => a.sort - b.sort).map((a) => a.value)
+                let mixedUpQuestions = questions.map((a) => ({
+                    sort: Math.random(),
+                    value: a
+                })).sort((a, b) => a.sort - b.sort).map((a) => a.value)
                 mixedUpQuestions.forEach((question, i) => {
                     const {id, interval, answer_1, answer_2, answer_3, answer_4, correct_answer, game_id} = question
-                    i === 0 && new Question(id, interval, answer_1, answer_2, answer_3, answer_4, correct_answer, game_id)
+                    if (i === 0 && id !== activeQuestionId) {
+                        localStorage.setItem('activeQuestionId', JSON.stringify(id));
+                        dispatchedQuestion = true
+                        return new Question(id, interval, answer_1, answer_2, answer_3, answer_4, correct_answer, game_id)
+                    }
+                    if (!dispatchedQuestion && id === 1) {
+                        return new Question(id, interval, answer_1, answer_2, answer_3, answer_4, correct_answer, game_id)
+                    }
                 })
             }
-            )
+         )
     }
 
     static playInterval() {

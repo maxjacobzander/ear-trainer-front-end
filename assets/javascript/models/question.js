@@ -26,7 +26,11 @@ class Question {
         document.querySelector("#interval2").addEventListener("click", Game.updateScore)
         document.querySelector("#interval3").addEventListener("click", Game.updateScore)
         document.querySelector("#interval4").addEventListener("click", Game.updateScore)
-
+        document.getElementById('next').onclick = () => {
+            const id = actualGame.dataset.id || undefined;
+            actualGame.innerHTML = ''
+            API.gatherQuestions()
+        }
     }
 
     showHTML(){
