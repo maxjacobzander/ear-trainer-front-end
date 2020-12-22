@@ -26,7 +26,7 @@ class Game {
 
     showHTML(){
         return `
-        <div style='float: left;'>
+        <div id="score" style='float: left;'>
         <h4>Correct Intervals: ${this.score}</h4>
         </div>
         <div style='float: right;'>

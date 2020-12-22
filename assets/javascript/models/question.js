@@ -19,7 +19,10 @@ class Question {
         actualGame.innerHTML = this.showHTML()
         gameHolder.appendChild(actualGame)
         document.querySelector(".sound-button").addEventListener("click", API.playInterval)
-        // document.getElementsByClassName(".answer").addEventListener("click", this.answerCorrect)
+        for (let index = 0; index < 4; index++) {
+            const answer = document.querySelectorAll(".answer")[index];
+            answer.addEventListener("click", this.answerCorrect.bind(this))
+        }
         document.getElementById('next').onclick = () => {
             const id = actualGame.dataset.id || undefined;
             actualGame.innerHTML = ''
@@ -28,13 +31,11 @@ class Question {
     }
 
     answerCorrect(){
-        let currentScore = Game.score
-        toArray(document.querySelectorAll(".answer")).forEach(answer => {
-        // let answer = answer.innerText
-    //         if (answer === this.id.correct_answer) {
-    //             return currentScore + 1
-    //         };
-        })
+        debugger
+            if (event.target.innerText === this.id.correct_answer) {
+                Game.score += 1
+                
+            };
         }
 
     showHTML(){
@@ -46,10 +47,10 @@ class Question {
         <button class="sound-button">Play Interval</button></div>
     <br>
     <div class="answers">
-        <button class="button" class="answer">${this.answer_1}</button>
-        <button class="button" class="answer">${this.answer_2}</button>
-        <button class="button" class="answer">${this.answer_3}</button>
-        <button class="button" class="answer">${this.answer_4}</button>
+        <button class="button answer">${this.answer_1}</button>
+        <button class="button answer">${this.answer_2}</button>
+        <button class="button answer">${this.answer_3}</button>
+        <button class="button answer">${this.answer_4}</button>
         <br><br>
     </div>
     <div class="button-container">
