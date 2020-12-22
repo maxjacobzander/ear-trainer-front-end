@@ -19,7 +19,7 @@ class Question {
         actualGame.innerHTML = this.showHTML()
         gameHolder.appendChild(actualGame)
         document.querySelector(".sound-button").addEventListener("click", API.playInterval)
-        
+        // document.getElementsByClassName(".answer").addEventListener("click", this.answerCorrect)
         document.getElementById('next').onclick = () => {
             const id = actualGame.dataset.id || undefined;
             actualGame.innerHTML = ''
@@ -27,11 +27,21 @@ class Question {
         }
     }
 
+    answerCorrect(){
+        let currentScore = Game.score
+        toArray(document.querySelectorAll(".answer")).forEach(answer => {
+        // let answer = answer.innerText
+    //         if (answer === this.id.correct_answer) {
+    //             return currentScore + 1
+    //         };
+        })
+        }
+
     showHTML(){
         return `
         <div class="button-container">
         <audio id="interval">
-            <source src="${this.interval}" type="audio/mpeg">
+            <source src=".${this.interval}" type="audio/mpeg">
         </audio>
         <button class="sound-button">Play Interval</button></div>
     <br>
