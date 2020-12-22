@@ -5,7 +5,6 @@ class Game {
         this.renderGame()
     }
 
-    // this.question = question ??
 
     renderGame(){
         const scoreHolder = document.getElementById("score-box")
@@ -17,8 +16,12 @@ class Game {
     }
 
     resetButton(){
-        document.getElementById("reset").addEventListener("click")
-        return score ++;
+        document.getElementById("reset").onclick = reset();
+    }
+
+    reset(){
+        const score = this.score;
+        return (score = 0)
     }
 
     showHTML(){

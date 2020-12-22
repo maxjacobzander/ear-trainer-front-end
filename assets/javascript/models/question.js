@@ -14,11 +14,12 @@ class Question {
     renderGame(){
         const gameHolder = document.getElementById("quiz-box")
         let actualGame = document.createElement("div")
-        // actualGame.classList.add("test-box")
+        const correctAnswer = this.correct_answer
         actualGame.dataset.id = this.id
         actualGame.innerHTML = this.showHTML()
         gameHolder.appendChild(actualGame)
         document.querySelector(".sound-button").addEventListener("click", API.playInterval)
+        
         document.getElementById('next').onclick = () => {
             const id = actualGame.dataset.id || undefined;
             actualGame.innerHTML = ''
@@ -35,10 +36,10 @@ class Question {
         <button class="sound-button">Play Interval</button></div>
     <br>
     <div class="answers">
-        <button class="button" id="interval1">${this.answer_1}</button>
-        <button class="button" id="interval2">${this.answer_2}</button>
-        <button class="button" id="interval3">${this.answer_3}</button>
-        <button class="button" id="interval4">${this.answer_4}</button>
+        <button class="button" class="answer">${this.answer_1}</button>
+        <button class="button" class="answer">${this.answer_2}</button>
+        <button class="button" class="answer">${this.answer_3}</button>
+        <button class="button" class="answer">${this.answer_4}</button>
         <br><br>
     </div>
     <div class="button-container">
@@ -61,9 +62,9 @@ class Question {
     }
 
 
-    static updateScore(target){
-        const correctAnswer = this.correct_answer;
-        let answer1 = (document.getElementById('interval1').innerText)
+    static userAnswer(target){
+        const correctAnswer = this.correct_answer
+        let answer1 = document.getElementById('interval1')
         let answer2 = (document.getElementById('interval2').innerText)
         let answer3 = (document.getElementById('interval3').innerText)
         let answer4 = (document.getElementById('interval4').innerText)
@@ -82,13 +83,4 @@ class Question {
                 break;
         }
     }
-
-    
-
-
-
-    // currentInterval = {};
-    // score = 0;
-    // questionCounter = 0;
-    // remainingInterval = [];
 }
