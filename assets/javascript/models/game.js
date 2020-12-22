@@ -26,8 +26,8 @@ class Game {
 
     showHTML(){
         return `
-        <div id="score" style='float: left;'>
-        <h4>Correct Intervals: ${this.score}</h4>
+        <div style='float: left;'>
+        <h4>Correct Intervals: <div id="score">${this.score}</div></h4>
         </div>
         <div style='float: right;'>
         <br>
@@ -35,16 +35,6 @@ class Game {
         </div>
         <br><br><br>`
     }
-
-    // static selectButton(){
-    //     const buttons = document.getElementsByTagName("button");
-    //     let buttonsCount = buttons.length;
-    //     for (let i = 0; i <= buttonsCount; i += 1) {
-    //         buttons[i].onclick = function(e) {
-    //         alert(this.id);
-    //         };
-    //     }​
-    // }
 
     // static updateScore(event){
     //     let answer1 = (document.getElementById('interval1').innerText)

@@ -2,10 +2,10 @@ class API {
     static addIntervals(){
         fetch("http://localhost:3000/games")
         .then(resp => resp.json())
-        .then(game => {
-            game.forEach(game => {
-                const{id, score} = game
-                new Game(id, score)
+        .then(games => {
+            games.forEach(g => {
+                const{id, score} = g
+                game = new Game(id, score)
             })
         } )
     }

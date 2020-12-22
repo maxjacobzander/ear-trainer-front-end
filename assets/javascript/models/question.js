@@ -31,10 +31,9 @@ class Question {
     }
 
     answerCorrect(){
-        debugger
             if (event.target.innerText === this.correct_answer) {
-                Game.score += 1
-                document.getElementById("score").innerHTML = Game.score += 1
+                game.score += 1
+                document.getElementById("score").innerHTML = game.score
             };
         }
 
@@ -73,25 +72,25 @@ class Question {
     }
 
 
-    static userAnswer(target){
-        const correctAnswer = this.correct_answer
-        let answer1 = document.getElementById('interval1')
-        let answer2 = (document.getElementById('interval2').innerText)
-        let answer3 = (document.getElementById('interval3').innerText)
-        let answer4 = (document.getElementById('interval4').innerText)
-        switch(target){
-            case answer1 === correctAnswer:
-                console.log("score = (score + 1)");
-                break;
-            case answer2 === this.correct_answer:
-                score = (score + 1);
-                break;
-            case answer3 === this.correct_answer:
-                score = (score + 1);
-                break;
-            case answer4 === this.correct_answer:
-                score = (score + 1);
-                break;
-        }
-    }
+    // static userAnswer(target){
+    //     const correctAnswer = this.correct_answer
+    //     let answer1 = document.getElementById('interval1')
+    //     let answer2 = (document.getElementById('interval2').innerText)
+    //     let answer3 = (document.getElementById('interval3').innerText)
+    //     let answer4 = (document.getElementById('interval4').innerText)
+    //     switch(target){
+    //         case answer1 === correctAnswer:
+    //             console.log("score = (score + 1)");
+    //             break;
+    //         case answer2 === this.correct_answer:
+    //             score = (score + 1);
+    //             break;
+    //         case answer3 === this.correct_answer:
+    //             score = (score + 1);
+    //             break;
+    //         case answer4 === this.correct_answer:
+    //             score = (score + 1);
+    //             break;
+    //     }
+    // }
 }
