@@ -18,14 +18,7 @@ class Question {
         actualGame.dataset.id = this.id
         actualGame.innerHTML = this.showHTML()
         gameHolder.appendChild(actualGame)
-        // gameHolder.addEventListener("click", e => {
-        //     if(e.target.className === "sound-button") this.playInterval(e)
-        // })
         document.querySelector(".sound-button").addEventListener("click", API.playInterval)
-        document.querySelector("#interval1").addEventListener("click", Game.updateScore)
-        document.querySelector("#interval2").addEventListener("click", Game.updateScore)
-        document.querySelector("#interval3").addEventListener("click", Game.updateScore)
-        document.querySelector("#interval4").addEventListener("click", Game.updateScore)
         document.getElementById('next').onclick = () => {
             const id = actualGame.dataset.id || undefined;
             actualGame.innerHTML = ''
@@ -67,10 +60,28 @@ class Question {
             )
     }
 
-    selectAnswer(){
-        document.querySelector
-    }
 
+    static updateScore(target){
+        const correctAnswer = this.correct_answer;
+        let answer1 = (document.getElementById('interval1').innerText)
+        let answer2 = (document.getElementById('interval2').innerText)
+        let answer3 = (document.getElementById('interval3').innerText)
+        let answer4 = (document.getElementById('interval4').innerText)
+        switch(target){
+            case answer1 === correctAnswer:
+                console.log("score = (score + 1)");
+                break;
+            case answer2 === this.correct_answer:
+                score = (score + 1);
+                break;
+            case answer3 === this.correct_answer:
+                score = (score + 1);
+                break;
+            case answer4 === this.correct_answer:
+                score = (score + 1);
+                break;
+        }
+    }
 
     
 

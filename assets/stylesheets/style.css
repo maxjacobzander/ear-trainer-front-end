@@ -22,6 +22,7 @@ body {
 
 .score-box {
     text-align: right;
+    padding-bottom: 20px;
 }
 
 #quiz-box {
