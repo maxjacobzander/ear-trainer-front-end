@@ -32,9 +32,9 @@ class Question {
 
     answerCorrect(){
         debugger
-            if (event.target.innerText === this.id.correct_answer) {
+            if (event.target.innerText === this.correct_answer) {
                 Game.score += 1
-                
+                document.getElementById("score").innerHTML = Game.score += 1
             };
         }
 
