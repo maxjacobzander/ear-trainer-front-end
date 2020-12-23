@@ -8,7 +8,6 @@ class Question {
         this.answer_4 = answer_4
         this.correct_answer = correct_answer
         this.game = game
-        // this.renderGame()
     }
 
     renderQuestion(){

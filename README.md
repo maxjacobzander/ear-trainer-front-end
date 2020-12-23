@@ -17,7 +17,8 @@ Anticipated future updates include:
 
 ### Installation Guide
 - Clone both front-end and back-end repositories
-
+- Follow directions on the back-end to properly set it up
+- Open index.html
 - Start training your ears!
 
 ### Contributor's Guide
