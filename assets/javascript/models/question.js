@@ -1,5 +1,5 @@
 class Question {
-    constructor(id, interval, answer_1, answer_2, answer_3, answer_4, correct_answer, game_id){
+    constructor(id, interval, answer_1, answer_2, answer_3, answer_4, correct_answer, game){
         this.id = id
         this.interval = interval
         this.answer_1 = answer_1
@@ -7,11 +7,11 @@ class Question {
         this.answer_3 = answer_3
         this.answer_4 = answer_4
         this.correct_answer = correct_answer
-        this.game_id = game_id
-        this.renderGame()
+        this.game = game
+        // this.renderGame()
     }
 
-    renderGame(){
+    renderQuestion(){
         const gameHolder = document.getElementById("quiz-box")
         let actualGame = document.createElement("div")
         const correctAnswer = this.correct_answer
@@ -26,14 +26,13 @@ class Question {
         document.getElementById('next').onclick = () => {
             const id = actualGame.dataset.id || undefined;
             actualGame.innerHTML = ''
-            API.gatherQuestions()
+            this.game.nextQuestion()
         }
     }
-
     answerCorrect(){
             if (event.target.innerText === this.correct_answer) {
-                game.score += 1
-                document.getElementById("score").innerHTML = game.score
+                this.game.score += 1
+                document.getElementById("score").innerHTML = this.game.score
             };
         }
 
@@ -70,27 +69,4 @@ class Question {
             }
             )
     }
-
-
-    // static userAnswer(target){
-    //     const correctAnswer = this.correct_answer
-    //     let answer1 = document.getElementById('interval1')
-    //     let answer2 = (document.getElementById('interval2').innerText)
-    //     let answer3 = (document.getElementById('interval3').innerText)
-    //     let answer4 = (document.getElementById('interval4').innerText)
-    //     switch(target){
-    //         case answer1 === correctAnswer:
-    //             console.log("score = (score + 1)");
-    //             break;
-    //         case answer2 === this.correct_answer:
-    //             score = (score + 1);
-    //             break;
-    //         case answer3 === this.correct_answer:
-    //             score = (score + 1);
-    //             break;
-    //         case answer4 === this.correct_answer:
-    //             score = (score + 1);
-    //             break;
-    //     }
-    // }
 }

@@ -1,8 +1,16 @@
 class Game {
-    constructor(id, score){
+    constructor(id, score, questions){
         this.id = id
-        this.score = score 
+        this.score = score
+        this.questions = questions.map( question => {
+            const {id, interval, answer_1, answer_2, answer_3, answer_4, correct_answer} = question
+            return new Question(id, interval, answer_1, answer_2, answer_3, answer_4, correct_answer, this)
+        })
+        let firstQuestion = this.questions[Math.floor(Math.random()*this.questions.length)];
+        localStorage.setItem('activeQuestionId', JSON.stringify(firstQuestion.id));
+        firstQuestion.renderQuestion()
         this.renderGame()
+        this.resetButton()
     }
 
 
@@ -15,13 +23,32 @@ class Game {
 
     }
 
+    nextQuestion(){
+        const activeQuestionId = localStorage.getItem('activeQuestionId')
+        let dispatchedQuestion = false;
+        let mixedUpQuestions = this.questions.map((a) => ({
+            sort: Math.random(),
+            value: a
+        })).sort((a, b) => a.sort - b.sort).map((a) => a.value)
+        mixedUpQuestions.forEach((question, i) => {
+            if (i === 0 && question.id !== activeQuestionId) {
+                localStorage.setItem('activeQuestionId', JSON.stringify(question.id));
+                dispatchedQuestion = true
+                question.renderQuestion()
+            }
+            if (!dispatchedQuestion && question.id === 1) {
+                question.renderQuestion()
+            }
+        })
+    }
+
     resetButton(){
-        document.getElementById("reset").onclick = reset();
+        document.getElementById("reset").addEventListener("click", this.reset.bind(this));
     }
 
     reset(){
-        const score = this.score;
-        return (score = 0)
+        this.score = 0
+        document.getElementById("score").innerHTML = this.score
     }
 
     showHTML(){
@@ -35,25 +62,4 @@ class Game {
         </div>
         <br><br><br>`
     }
-
-    // static updateScore(event){
-    //     let answer1 = (document.getElementById('interval1').innerText)
-    //     let answer2 = (document.getElementById('interval2').innerText)
-    //     let answer3 = (document.getElementById('interval3').innerText)
-    //     let answer4 = (document.getElementById('interval4').innerText)
-    //     switch(event.target){
-    //         case answer1 === Question.correct_answer:
-    //             console.log("score = (score + 1)");
-    //             break;
-    //         case answer2 === Question.correct_answer:
-    //             score = (score + 1);
-    //             break;
-    //         case answer3 === Question.correct_answer:
-    //             score = (score + 1);
-    //             break;
-    //         case answer4 === Question.correct_answer:
-    //             score = (score + 1);
-    //             break;
-    //     }
-    // }
 }
