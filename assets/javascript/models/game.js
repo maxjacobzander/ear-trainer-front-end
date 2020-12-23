@@ -43,24 +43,24 @@ class Game {
     }
 
     resetButton(){
-        document.querySelector(".reset").addEventListener("click", this.reset.bind(this));
+        document.getElementById("reset").addEventListener("click", this.reset.bind(this));
     }
 
     reset(){
-        debugger
         this.score = 0
         document.getElementById("score").innerHTML = this.score
     }
 
     showHTML(){
         return `
-        <div style='float: left;'>
+        <div style='float: left;';>
         <h4>Correct Intervals: <div id="score">${this.score}</div></h4>
         </div>
-        <div style='float: right;'>
+        <div class="reset" style='float: right;'>
         <br>
-        <input type="button" class="reset" value="Reset Score"/>
+        <input type="button" id="reset" value="Reset Score"/>
         </div>
+        <br style="clear:both;"
         <br><br><br>`
     }
 }

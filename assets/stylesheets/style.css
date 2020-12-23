@@ -23,7 +23,10 @@ body {
 
 .score-box {
     text-align: right;
-    padding: 20px;
+}
+
+.reset {
+    padding-top: 10px;
 }
 
 #quiz-box {
@@ -72,4 +75,8 @@ body {
 .button-container {
     display: flex;
     justify-content: center;
+}
+
+h4 {
+    text-align: center;
 }
