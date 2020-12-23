@@ -10,7 +10,6 @@ Upon opening up the page, a user hits the "Play Interval" button, instantiating 
 
 ### Future Plans
 Anticipated future updates include:
-- Ability to shuffle the order in which the intervals are played
 - Chordal Sonorities
 - A section for tips on how to learn
     -(including a RUD layout so that people can submit other tricks that they use for hearing intervals)
