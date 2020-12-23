@@ -1,3 +1,7 @@
+html {
+    zoom: 0.9;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: ghostwhite;
@@ -27,6 +31,7 @@ body {
 
 .reset {
     padding-top: 10px;
+    padding-right: 20px;
 }
 
 #quiz-box {

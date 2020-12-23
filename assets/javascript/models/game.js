@@ -61,6 +61,6 @@ class Game {
         <input type="button" id="reset" value="Reset Score"/>
         </div>
         <br style="clear:both;"
-        <br><br><br>`
+        <br>`
     }
 }
