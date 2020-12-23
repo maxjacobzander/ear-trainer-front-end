@@ -43,10 +43,11 @@ class Game {
     }
 
     resetButton(){
-        document.getElementById("reset").addEventListener("click", this.reset.bind(this));
+        document.querySelector(".reset").addEventListener("click", this.reset.bind(this));
     }
 
     reset(){
+        debugger
         this.score = 0
         document.getElementById("score").innerHTML = this.score
     }
@@ -58,7 +59,7 @@ class Game {
         </div>
         <div style='float: right;'>
         <br>
-        <button id="reset">Reset Score</button>
+        <input type="button" class="reset" value="Reset Score"/>
         </div>
         <br><br><br>`
     }
