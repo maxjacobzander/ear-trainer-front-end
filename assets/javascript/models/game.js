@@ -43,12 +43,21 @@ class Game {
     }
 
     resetButton(){
-        document.getElementById("reset").addEventListener("click", this.reset.bind(this));
+        document.getElementById("reset").addEventListener("click", this.reset);
     }
 
     reset(){
-        this.score = 0
-        document.getElementById("score").innerHTML = this.score
+        let score = 0
+        let bodyData = {
+            game: {score}
+        }
+        fetch(`http://localhost:3000/games/1`, {
+            method: "PATCH",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(bodyData)
+    })
+        .then(resp => resp.json())
+        .then (data => document.getElementById("score").innerHTML = data.score)
     }
 
     showHTML(){

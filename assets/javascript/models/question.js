@@ -45,7 +45,7 @@ class Question {
         fetch(`http://localhost:3000/games/1`, {
             method: "PATCH",
             headers: {"Content-Type": "application/json"},
-            body: JSON.stringify(bodyData),
+            body: JSON.stringify(bodyData)
         })
         .then(resp => resp.json())
         .then (data => document.getElementById("score").innerHTML = data.score)
