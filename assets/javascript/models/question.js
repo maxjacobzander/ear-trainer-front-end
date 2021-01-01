@@ -20,7 +20,7 @@ class Question {
         document.querySelector(".sound-button").addEventListener("click", API.playInterval)
         for (let index = 0; index < 4; index++) {
             const answer = document.querySelectorAll(".answer")[index];
-            answer.addEventListener("click", this.answerCorrect.bind(this))
+            answer.addEventListener("click", this.handleAnswer.bind(this))
         }
         document.getElementById('next').onclick = () => {
             const id = actualGame.dataset.id || undefined;
@@ -28,12 +28,28 @@ class Question {
             this.game.nextQuestion()
         }
     }
-    answerCorrect(){
+    handleAnswer(){
+            let score = this.game.score
             if (event.target.innerText === this.correct_answer) {
-                this.game.score += 1
-                document.getElementById("score").innerHTML = this.game.score
-            };
+                this.gameScore(score += 1)
+            }
+            // else (event.target.innerText !== this.correct_answer) {
+            //     event.target.style CONTINUE THIS!!!!
+            // }
+    }
+
+    gameScore(score){
+        let bodyData = {
+            game: {score}
         }
+        fetch(`http://localhost:3000/games/1`, {
+            method: "PATCH",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(bodyData),
+        })
+        .then(resp => resp.json())
+        .then (data => document.getElementById("score").innerHTML = data.score)
+    }
 
     showHTML(){
         return `
@@ -56,16 +72,16 @@ class Question {
         `
     }
 
-    intervalAudio(){
-        let id = parseInt(dataset.id)
-        fetch(`http://localhost:3000/questions/${id}`)
-            .then(resp => resp.json())
-            .then(questions => {
-                questions.forEach(question => {
-                    const {id, interval, answer_1, answer_2, answer_3, answer_4, correct_answer, game_id} = question
-                    new Question(id, interval, answer_1, answer_2, answer_3, answer_4, correct_answer, game_id)
-                })
-            }
-            )
-    }
+    // intervalAudio(){
+    //     let id = parseInt(dataset.id)
+    //     fetch(`http://localhost:3000/questions/${id}`)
+    //         .then(resp => resp.json())
+    //         .then(questions => {
+    //             questions.forEach(question => {
+    //                 const {id, interval, answer_1, answer_2, answer_3, answer_4, correct_answer, game_id} = question
+    //                 new Question(id, interval, answer_1, answer_2, answer_3, answer_4, correct_answer, game_id)
+    //             })
+    //         }
+    //         )
+    // }
 }
