@@ -43,11 +43,11 @@ class Game {
     }
 
     resetButton(){
-        document.getElementById("reset").addEventListener("click", this.reset);
+        document.getElementById("reset").addEventListener("click", this.reset.bind(this));
     }
 
     reset(){
-        let score = 0
+        let score = this.score = 0
         let bodyData = {
             game: {score}
         }

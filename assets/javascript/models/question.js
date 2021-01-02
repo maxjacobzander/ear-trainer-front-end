@@ -29,9 +29,9 @@ class Question {
         }
     }
     handleAnswer(){
-            let score = this.game.score
+            // let score = this.game.score
             if (event.target.innerText === this.correct_answer) {
-                this.gameScore(score)
+                this.gameScore()
             }
             else { 
                 event.target.style.color = "red";
