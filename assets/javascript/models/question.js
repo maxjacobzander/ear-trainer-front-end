@@ -31,14 +31,15 @@ class Question {
     handleAnswer(){
             let score = this.game.score
             if (event.target.innerText === this.correct_answer) {
-                this.gameScore(score += 1)
+                this.gameScore(score)
             }
             else { 
                 event.target.style.color = "red";
             }
     }
 
-    gameScore(score){
+    gameScore(){
+        let score = this.game.score += 1
         let bodyData = {
             game: {score}
         }
