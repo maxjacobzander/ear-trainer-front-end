@@ -33,9 +33,9 @@ class Question {
             if (event.target.innerText === this.correct_answer) {
                 this.gameScore(score += 1)
             }
-            // else (event.target.innerText !== this.correct_answer) {
-            //     event.target.style CONTINUE THIS!!!!
-            // }
+            else { 
+                event.target.style.color = "red";
+            }
     }
 
     gameScore(score){
