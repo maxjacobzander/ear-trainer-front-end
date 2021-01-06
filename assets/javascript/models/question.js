@@ -74,32 +74,19 @@ class Question {
         `
     }
 
-    static changeBackground(){
-        const button = document.getElementById("background")
-        button.addEventListener("click", this.handleBackground)
-    }
+    // static changeBackground(){
+    //     const button = document.getElementById("background")
+    //     button.addEventListener("click", this.handleBackground)
+    // }
 
-    static handleBackground() {
-            let scoreText = document.getElementsByTagName('h4');
-            if (document.body.style.background === "black") {
-                document.body.style.background = "ghostwhite";
-                scoreText[0].style.color = "black";
-            } else {
-                document.body.style.background = "black";
-                scoreText[0].style.color = "ghostwhite";
-            }
-    }
-
-    // intervalAudio(){
-    //     let id = parseInt(dataset.id)
-    //     fetch(`http://localhost:3000/questions/${id}`)
-    //         .then(resp => resp.json())
-    //         .then(questions => {
-    //             questions.forEach(question => {
-    //                 const {id, interval, answer_1, answer_2, answer_3, answer_4, correct_answer, game_id} = question
-    //                 new Question(id, interval, answer_1, answer_2, answer_3, answer_4, correct_answer, game_id)
-    //             })
+    // static handleBackground() {
+    //         let scoreText = document.getElementsByTagName('h4');
+    //         if (document.body.style.background === "black") {
+    //             document.body.style.background = "ghostwhite";
+    //             scoreText[0].style.color = "black";
+    //         } else {
+    //             document.body.style.background = "black";
+    //             scoreText[0].style.color = "ghostwhite";
     //         }
-    //         )
     // }
 }
