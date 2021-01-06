@@ -29,7 +29,6 @@ class Question {
         }
     }
     handleAnswer(){
-            // let score = this.game.score
             if (event.target.innerText === this.correct_answer) {
                 this.gameScore()
             }
@@ -52,6 +51,7 @@ class Question {
         .then (data => document.getElementById("score").innerHTML = data.score)
     }
 
+
     showHTML(){
         return `
         <div class="button-container">
@@ -70,7 +70,24 @@ class Question {
     <div class="button-container">
         <button id="next" class="next-button-hide" onClick={this.nextQuestion}>Next</button>
     </div>
+    <br><br>
         `
+    }
+
+    static changeBackground(){
+        const button = document.getElementById("background")
+        button.addEventListener("click", this.handleBackground)
+    }
+
+    static handleBackground() {
+            let scoreText = document.getElementsByTagName('h4');
+            if (document.body.style.background === "black") {
+                document.body.style.background = "ghostwhite";
+                scoreText[0].style.color = "black";
+            } else {
+                document.body.style.background = "black";
+                scoreText[0].style.color = "ghostwhite";
+            }
     }
 
     // intervalAudio(){

@@ -40,6 +40,15 @@ body {
     position: absolute;
 }
 
+.background-feature {
+    justify-content: center;
+    align-items: center;
+    padding-top: 22rem;
+    padding-left: 8rem;
+    z-index: 1;
+    position: absolute;
+}
+
 .answers {
     display: grid;
     grid-template-columns: auto auto;
