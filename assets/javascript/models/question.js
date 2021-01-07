@@ -30,25 +30,12 @@ class Question {
     }
     handleAnswer(){
             if (event.target.innerText === this.correct_answer) {
-                this.gameScore()
+                this.game.score += 1
+                document.getElementById("score").innerHTML = this.game.score
             }
             else { 
                 event.target.style.color = "red";
             }
-    }
-
-    gameScore(){
-        let score = this.game.score += 1
-        let bodyData = {
-            game: {score}
-        }
-        fetch(`http://localhost:3000/games/1`, {
-            method: "PATCH",
-            headers: {"Content-Type": "application/json"},
-            body: JSON.stringify(bodyData)
-        })
-        .then(resp => resp.json())
-        .then (data => document.getElementById("score").innerHTML = data.score)
     }
 
 
@@ -73,20 +60,4 @@ class Question {
     <br><br>
         `
     }
-
-    // static changeBackground(){
-    //     const button = document.getElementById("background")
-    //     button.addEventListener("click", this.handleBackground)
-    // }
-
-    // static handleBackground() {
-    //         let scoreText = document.getElementsByTagName('h4');
-    //         if (document.body.style.background === "black") {
-    //             document.body.style.background = "ghostwhite";
-    //             scoreText[0].style.color = "black";
-    //         } else {
-    //             document.body.style.background = "black";
-    //             scoreText[0].style.color = "ghostwhite";
-    //         }
-    // }
 }
